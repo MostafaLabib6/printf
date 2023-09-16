@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	va_start(args, format);
 
-	/*check for empty input string*/	
+	/*check for empty input string*/
 	if (format == NULL)
 		return (-1);
 
@@ -30,12 +30,12 @@ int _printf(const char *format, ...)
 		else
 		{
 			++format;
-			if(*format == '%')
+			if (*format == '%')
 			{
 				write(1, format, 1);
 				++printed_chars_len;
 			}
-			else if(*format == 'c')
+			else if (*format == 'c')
 			{
 				char c = va_arg(args, int);
 				/* printf("%c", c); // TODO: remove this line after testing */
@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 				write(1, &c, 1);
 				++printed_chars_len;
 			}
-			else if(*format == 's')
+			else if (*format == 's')
 			{
 				char *s = va_arg(args, char *);
 				write(1, s, strlen(s));

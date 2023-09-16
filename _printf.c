@@ -57,7 +57,7 @@ int _printf(const char *format, ...)
 				itoa(num, tmp_buffer, 10);/*convert integer to string */
 				write(1, tmp_buffer, strlen(tmp_buffer));
 				printed_chars_len += strlen(tmp_buffer);
-				/*free(tmp_buffer);/*free the buffer*/
+				/*/*free(tmp_buffer);/*free the buffer*/*/
 			}
 		}
 		++format;

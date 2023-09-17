@@ -1,58 +1,52 @@
-#include "main.h"
-
+#include"main.h"
 /**
- * print_int - prints an integer
- * @args: va_list of arguments from _printf
- * Return: number of char printed
+ * print_integer - Prints an integer
+ * @list: list of arguments
+ * Return: Will return the amount of characters printed.
  */
-int print_int(va_list args)
-{
-	int n = va_arg(args, int);
-	int res = count_digit(n);
 
-	if (n <= 0)
-		res++;
-	print_number(n);
-	return (res);
+int print_integer(va_list list)
+{
+	int num_length;
+
+	num_length = print_number(list);
+	return (num_length);
 }
 
 /**
- * print_number - helper function that loops through
- * an integer and prints all its digits
- * @n: integer to be printed
+ * print_number - prints a number send to this function
+ * @args: List of arguments
+ * Return: The number of arguments printed
  */
-void print_number(int n)
+
+int print_number(va_list args)
 {
-	unsigned int n1 = n;
+	int n;
+	int div;
+	int len;
+	unsigned int num;
+
+	n  = va_arg(args, int);
+	div = 1;
+	len = 0;
 
 	if (n < 0)
 	{
-		_putchar('-');
-		n1 = n * -1;
+		len += _write_char('-');
+		num = n * -1;
 	}
+	else
+		num = n;
 
-	if (n1 / 10)
-		print_number(n1 / 10);
-	_putchar((n1 % 10) + '0');
-}
+	for (; num / div > 9; )
+		div *= 10;
 
-/**
- * count_digit - returns the number of digits in an integer
- * for _printf
- * @i: integer to evaluate
- * Return: number of digits
- */
-int count_digit(int i)
-{
-	unsigned int d = 0;
-	unsigned int u = i;
-
-	if (i < 0)
-		u *= -1;
-	while (u == 0)
+	for (; div != 0; )
 	{
-		u /= 10;
-		d++;
+		len += _write_char('0' + num / div);
+		num %= div;
+		div /= 10;
 	}
-	return (d);
+
+	return (len);
 }

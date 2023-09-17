@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 				write(1, s, strlen(s));
 				printed_chars_len += strlen(s);
 			}
-			else 
+			else
 				return (-1);
 
 		}

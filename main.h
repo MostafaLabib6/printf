@@ -30,7 +30,11 @@ int _printf(const char *format, ...);
 /*_write file*/
 int _putchar(char c);
 int _puts(char *s);
+/*print_char*/
 int print_char(va_list arg);
+/*print_string*/
 int print_string(va_list arg);
+/*get_print*/
+int get_print(const char *format, va_list arg, struct formats *format_redear);
 
 #endif /* MAIN_H */

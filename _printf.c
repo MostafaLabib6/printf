@@ -33,9 +33,9 @@ int _printf(const char *format, ...)
 		{
 			++format;
 			if (*format == '\0')
-				return(-1);
+				return (-1);
 
-			if (*format == '%')
+			else if (*format == '%')
 			{
 				write(1, format, 1);
 				++printed_chars_len;
@@ -52,6 +52,8 @@ int _printf(const char *format, ...)
 				write(1, s, strlen(s));
 				printed_chars_len += strlen(s);
 			}
+			else 
+				return (-1);
 
 		}
 		++format;

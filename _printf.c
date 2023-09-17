@@ -65,5 +65,5 @@ int _printf(const char *format, ...)
 	va_end(args);
 	printf("lol :%d\n",printed_chars_len);
 	return (printed_chars_len);
-
 }
+

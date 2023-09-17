@@ -1,6 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
-#include "../main.h"
+#include "main.h"
 
 /**
  * main - Entry point
@@ -29,6 +29,7 @@ int main(void)
 	printf("length[len %d , len2 %d]\n", len, len2);
 
 	printf("----------------new checks------\n");
+	_printf("length[len %d , len2 %d]\n", len, len2);
 
 	len = _printf("mostafa % %  ");
 	printf("mostafa % %  ");

@@ -37,8 +37,6 @@ int print_string(va_list arg);
 /*get_print*/
 int get_print(const char *format, va_list arg, struct formats *format_redear);
 /*_print_integer*/
-int print_int(va_list args);
-void print_number(int n);
-int count_digit(int i);
-
+int print_integer(va_list list);
+int print_number(va_list args);
 #endif /* MAIN_H */

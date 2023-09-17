@@ -8,7 +8,7 @@
  * Return: Integer.
 */
 
-int get_print(const char *format, va_list arg, struct formats *format_redear)
+int get_print(const char *format, va_list args, struct formats *format_redear)
 {
 	/* accumlator to keep tracflagof the number of printed characters*/
 	int printed_chars_len = 0;

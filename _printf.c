@@ -34,6 +34,9 @@ int _printf(const char *format, ...)
 		else
 		{
 			++format;
+			if (*format == '\0')
+				break;
+
 			if (*format == '%')
 			{
 				write(1, format, 1);
@@ -50,6 +53,11 @@ int _printf(const char *format, ...)
 				char *s = va_arg(args, char *);
 				write(1, s, strlen(s));
 				printed_chars_len += strlen(s);
+			}
+			else
+			{
+				write(1, format, 1);
+				++printed_chars_len;
 			}
 
 		}

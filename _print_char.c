@@ -1,9 +1,11 @@
 #include "main.h"
+
 /**
  * print_char - print a character
  * @arg: char to print
  * Return: 1 (length).
 */
+
 int print_char(va_list arg)
 {
 	char str;

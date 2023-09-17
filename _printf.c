@@ -1,5 +1,5 @@
 #include"main.h"
-
+#include <stdio.h>
 /**
  * _printf - function that produces output according to a format
  * @format: an array of chars
@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	/* accumlator to keep track of the number of printed characters*/
 	int printed_chars_len = 0;
 	/* buffer to store the string representation of an integer using itoa*/
-	char tmp_buffer[10000];
+	/*char tmp_buffer[10000];*/
 
 	va_list args;
 	va_start(args, format);
@@ -40,8 +40,6 @@ int _printf(const char *format, ...)
 			else if (*format == 'c')
 			{
 				char c = va_arg(args, int);
-				/* printf("%c", c); // TODO: remove this line after testing */
-				/* printf("%c", &c); // TODO: remove this line after testing */
 				write(1, &c, 1);
 				++printed_chars_len;
 			}
@@ -51,19 +49,21 @@ int _printf(const char *format, ...)
 				write(1, s, strlen(s));
 				printed_chars_len += strlen(s);
 			}
+			/*
 			else if (*format == 'd' || *format == 'i')
 			{
 				int num = va_arg(args, int);
-				itoa(num, tmp_buffer, 10);/*convert integer to string */
+				itoa(num, tmp_buffer, 10); convert integer to string
 				write(1, tmp_buffer, strlen(tmp_buffer));
 				printed_chars_len += strlen(tmp_buffer);
-				/*/*free(tmp_buffer);/*free the buffer*/*/
 			}
+			*/
 		}
 		++format;
 	}
 	/*clear the memory*/
 	va_end(args);
+	printf("lol :%d\n",printed_chars_len);
 	return (printed_chars_len);
 
 }

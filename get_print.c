@@ -3,7 +3,7 @@
 /**
  * get_print - helper function for print.
  * @format: string.
- * @arg: string.
+ * @args: string.
  * @format_redear: string.
  * Return: Integer.
 */

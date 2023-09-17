@@ -1,5 +1,5 @@
 #include"main.h"
-#include <stdio.h>
+
 /**
  * _printf - function that produces output according to a format
  * @format: an array of chars
@@ -49,21 +49,11 @@ int _printf(const char *format, ...)
 				write(1, s, strlen(s));
 				printed_chars_len += strlen(s);
 			}
-			/*
-			else if (*format == 'd' || *format == 'i')
-			{
-				int num = va_arg(args, int);
-				itoa(num, tmp_buffer, 10); convert integer to string
-				write(1, tmp_buffer, strlen(tmp_buffer));
-				printed_chars_len += strlen(tmp_buffer);
-			}
-			*/
+			
 		}
 		++format;
 	}
 	/*clear the memory*/
 	va_end(args);
-	printf("lol :%d\n",printed_chars_len);
 	return (printed_chars_len);
 }
-

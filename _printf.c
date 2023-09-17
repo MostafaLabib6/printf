@@ -54,11 +54,6 @@ int _printf(const char *format, ...)
 				write(1, s, strlen(s));
 				printed_chars_len += strlen(s);
 			}
-			else
-			{
-				write(1, format, 1);
-				++printed_chars_len;
-			}
 
 		}
 		++format;

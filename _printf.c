@@ -42,16 +42,20 @@ int _printf(const char *format, ...)
 			else if (*format == 'c')
 			{
 				char c = va_arg(args, int);
+				if (c == NULL)
+					return (-1);
 				write(1, &c, 1);
 				++printed_chars_len;
 			}
 			else if (*format == 's')
 			{
 				char *s = va_arg(args, char *);
+				if (s == NULL)
+					return (-1);
 				write(1, s, strlen(s));
 				printed_chars_len += strlen(s);
 			}
-			
+
 		}
 		++format;
 	}

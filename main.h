@@ -39,4 +39,5 @@ int get_print(const char *format, va_list arg, struct formats *format_redear);
 /*_print_integer*/
 int print_integer(va_list list);
 int print_number(va_list args);
+int print_binary(va_list args);
 #endif /* MAIN_H */

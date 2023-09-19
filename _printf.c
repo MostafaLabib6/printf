@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 	fm format_redear[] = {
 						{"%c", print_char}, {"%s", print_string},
 						{"%d", print_integer}, {"%i", print_integer},
+						{"%b", print_binary},
 						{NULL, NULL}
 						};
 

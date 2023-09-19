@@ -40,9 +40,14 @@ int get_print(const char *format, va_list arg, struct formats *format_redear);
 /*_print_integer*/
 int print_integer(va_list list);
 int print_number(va_list args);
-int print_binary(va_list args);
+int unsigned_integer(va_list list);
 /*helper_function*/
 unsigned int base_len(unsigned int num, int base);
 char *rev_string(char *s);
 char *_memcpy(char *dest, char *src, unsigned int n);
+/*base-changes*/
+int print_heX(va_list list);
+int print_hex(va_list list);
+int print_octal(va_list list);
+int print_binary(va_list args);
 #endif /* MAIN_H */

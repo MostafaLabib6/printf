@@ -45,7 +45,13 @@ int main(void)
 	len = _printf(NULL);
 	printf("%d\n", len);
 	printf("----------------new checks------\n");
-	len = _printf("%b\n", 98);
+	len = _printf("%u \n", 984515);
+	printf("%d\n", len);
+	len = _printf("%x\n", 980445);
+	printf("%d\n", len);
+	len = _printf("%X\n", 980445);
+	printf("%d\n", len);
+	len = _printf("%o\n", 90445);
 	printf("%d\n", len);
 	return (0);
 }

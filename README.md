@@ -53,8 +53,8 @@
 
 ### Authors
 
-- Mostafa Labib 👾
-- Zainab Ahmad [@Zaiyyo](https://github.com/Zaiyyo)
+- Mostafa Labib ^_^
+- Zainab Ahmad [@Zaiyyo](https://github.com/Zaiyyo) 👌
 
 
 ## Tasks

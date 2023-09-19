@@ -1,6 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
-#include "../main.h"
+#include "main.h"
 
 /**
  * main - Entry point
@@ -28,7 +28,6 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	printf("length[len %d , len2 %d]\n", len, len2);
 
-	printf("----------------new checks------\n");
 	_printf("length[len %d , len2 %d]\n", len, len2);
 	_printf("Length:[%d, %i]\n", len, len);
 	printf("Length:[%d, %i]\n", len2, len2);
@@ -45,6 +44,8 @@ int main(void)
 
 	len = _printf(NULL);
 	printf("%d\n", len);
-
+	printf("----------------new checks------\n");
+	len = _printf("%b\n", 98);
+	printf("%d\n", len);
 	return (0);
 }

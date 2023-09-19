@@ -59,28 +59,35 @@ int print_number(va_list args)
 
 int print_binary(va_list args)
 {
-	int num, i = 0, count = 0, flag = 0;
-	char arr[32];
+	unsigned int num;
+	int i, len;
+	char *str;
+	char *rev_str;
 
 	num = va_arg(args, unsigned int);
 	if (num == 0)
-		arr[i] = '0';
+		return (_putchar('0'));
+	if (num < 1)
+		return (-1);
+	len = base_len(num, 2);
+	str = malloc(sizeof(char) * len + 1);
+	if (str == NULL)
+		return (-1);
 
-	while (num > 0)
+	for (i = 0; num > 0; i++)
 	{
-		arr[i] = (num % 2) + '0';
-		num /= 2;
-		++i;
-		flag = 1;
+		if (num % 2 == 0)
+			str[i] = '0';
+		else
+			str[i] = '1';
+		num = num / 2;
 	}
-	if (flag == 1)
-		--i;
-	count = i;
-	while (i  >= 0)
-	{
-		_putchar(arr[i]);
-		--i;
-	}
-	return (count);
-
+	str[i] = '\0';
+	rev_str = rev_string(str);
+	if (rev_str == NULL)
+		return (-1);
+	write_base(rev_str);
+	free(str);
+	free(rev_str);
+	return (len);
 }

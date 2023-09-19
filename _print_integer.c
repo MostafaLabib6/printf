@@ -50,3 +50,37 @@ int print_number(va_list args)
 
 	return (len);
 }
+
+/**
+ * print_binary - a number send to this function
+ * @args: List of arguments
+ * Return: The number of arguments printed
+ */
+
+int print_binary(va_list args)
+{
+	int num, i = 0, count = 0, flag = 0;
+	char arr[32];
+
+	num = va_arg(args, unsigned int);
+	if (num == 0)
+		arr[i] = '0';
+
+	while (num > 0)
+	{
+		arr[i] = (num % 2) + '0';
+		num /= 2;
+		++i;
+		flag = 1;
+	}
+	if (flag == 1)
+		--i;
+	count = i;
+	while (i  >= 0)
+	{
+		_putchar(arr[i]);
+		--i;
+	}
+	return (count);
+
+}

@@ -50,8 +50,4 @@ int print_heX(va_list list);
 int print_hex(va_list list);
 int print_octal(va_list list);
 int print_binary(va_list args);
-/*print_non_printable_characters*/
-int non_printable_char(char c);
-/*print ASCII code*/
-int ascii_code(int i, char code, char symbol[]);
 #endif /* MAIN_H */
